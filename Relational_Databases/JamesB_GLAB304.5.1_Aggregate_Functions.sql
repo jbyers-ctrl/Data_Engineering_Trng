@@ -44,6 +44,7 @@ WHERE status = 'In Process';
 
 -- DATE_FORMAT()
 SELECT 
+    -- order date results by formatted date strings
     orderNumber,
     DATE_FORMAT(orderdate, '%Y-%m-%d') orderDate,
     DATE_FORMAT(requireddate, '%a %D %b %Y') requireddate,
@@ -54,3 +55,46 @@ SELECT orderNumber,
     DATE_FORMAT(shippeddate, '%W %D %M %Y') as 'Shipped date'
 FROM orders
 ORDER BY shippeddate;
+
+-- LPAD(str, len, padstr)
+
+-- pads 'hi' with two '?'s up to a length of 4
+SELECT LPAD('hi',4,'??');     -- Result   -> '??hi'
+
+-- pads 'hi' with zero '?'s because length is 1
+SELECT LPAD('hi',1,'??');     -- Result -> 'h'
+
+-- pads 'firstName' with number 'k's up to specified length
+SELECT firstName, LPAD(firstName,10,'kk'), LPAD(firstName,5,'kk'), LPAD(firstName,4,'kk') 
+FROM classicmodels.employees;
+
+-- TRIM() Function
+
+-- removes both leading and trailing spaces
+SELECT TRIM(' SQL TRIM Function ');
+
+-- removes leading spaces
+SELECT LTRIM('  SQL LTRIM function');
+
+-- removes trailing spaces
+SELECT RTRIM('SQL RTRIM function   ');
+
+-- YEAR() Function
+
+-- returns 2002
+SELECT YEAR('2002-01-01');
+
+SELECT YEAR(shippeddate) as year,  COUNT(ordernumber) as orderQty
+FROM    orders 
+GROUP BY YEAR(shippeddate)
+ORDER BY YEAR(shippeddate);
+
+-- DAY() Function
+
+-- returns only the day of the month
+SELECT DAY('2022-01-15'); -- result -> 15
+
+SELECT  DAY(orderdate) as dayofmonth, COUNT(*)
+FROM    orders WHERE    YEAR(orderdate) = 2004
+GROUP BY dayofmonth
+ORDER BY dayofmonth;
