@@ -1,0 +1,9 @@
+AMC Matador	15.5	8	304	120	3962	13.9	76	US
+Ford Gran Torino	14.5	8	351	152	4215	12.8	76	US
+Plymouth Valiant	22	6	225	100	3233	15.4	76	US
+Chevrolet Nova	22	6	250	105	3353	14.5	76	US
+Ford Maverick	24	6	200	81	3012	17.6	76	US
+AMC Hornet	22.5	6	232	90	3085	17.6	76	US
+Chevrolet Chevette	29	4	85	52	2035	22.2	76	US
+Chevrolet Woody	24.5	4	98	60	2164	22.1	76	US
+Volkswagen Rabbit	29	4	90	70	1937	14.2	76	Europe
