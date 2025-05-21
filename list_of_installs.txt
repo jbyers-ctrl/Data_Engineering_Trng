@@ -33,6 +33,6 @@ from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, BooleanType, DoubleType
 from pyspark.sql.functions import mean, avg, max, min (or import*)
 import findspark
-findspark.int()
+findspark.init()
 import os
 import sys
